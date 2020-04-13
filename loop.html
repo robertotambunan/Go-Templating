@@ -1,0 +1,67 @@
+<div class="section-product" style="clear:left;">
+<h2>Trending in Marketplace</h2>
+{{range .}}
+    <div class="product">
+        <table>
+            <tr>
+                <th>
+                {{.Name}}
+                </th>
+            </tr>
+            <tr>
+                <td>
+                <img src= {{.Images | formatAsTakeOneString}} width="230px" height="230px"></img>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                {{.Location}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                {{.Price.PriceDisplay }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                {{.RootCategory.Name}}
+                </td>
+            </tr>
+
+        </table>
+    </div>
+{{end}}
+</div>
+
+<style>
+.section-product{
+    width: 100%;
+    margin: 0 auto;
+}
+.product{
+    width: 230px;
+    height: 300px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom:100px;
+}
+
+.product:last-child{
+    width: 230px;
+    height: 300px;
+    float: left;
+    margin-right: 0px;
+    margin-left: 10px;
+}
+.product:first-child{
+    width: 230px;
+    height: 300px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+
+</style>
